@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <com.example.springweather.customview.MainView
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" >
+
+                        
+                        <!-- header -->
+
+                        <LinearLayout
+                            android:id="@+id/main_header_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="4"
+                            android:gravity="center" >
+
+                            <include layout="@layout/main_header" />
+                        </LinearLayout>
+
+                        <!-- middle -->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:background="@drawable/shape_footer"
+                            android:gravity="center"
+                            android:layout_gravity="center" >
+
+                            <include layout="@layout/main_middle" />
+                        </LinearLayout>
+                        
+                    </LinearLayout>
+                </com.example.springweather.customview.MainView>
+
+                <com.example.springweather.customview.TipView
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/shape_footer"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_centerVertical="true" >
+
+                        <include layout="@layout/tip_middle" />
+                    </LinearLayout>
+                </com.example.springweather.customview.TipView>
+
+                <com.example.springweather.customview.CityView
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/et_search"
+                            android:layout_width="0dp"
+                            android:background="@drawable/selector_bg_edittext"
+                            android:layout_height="match_parent"
+                            android:hint="请输入城市名"
+                            android:inputType="text"
+                            android:layout_margin="5dp"
+                            android:paddingLeft="5dp"
+                            android:layout_weight="1" />
+
+                        <Button
+                            android:id="@+id/btn_add"
+                            android:background="@drawable/selector_add"
+                            
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            />
+                    </LinearLayout>
+
+                    <ListView
+                        android:id="@android:id/list"
+                        android:layout_marginTop="5dp"
+                        android:paddingLeft="5dp"
+                        android:background="@drawable/shape_footer"
+                        android:listSelector="@color/grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:dividerHeight="1sp"
+                        android:divider="@color/grey" >
+                    </ListView>
+                </com.example.springweather.customview.CityView>
+            </FrameLayout>
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>
